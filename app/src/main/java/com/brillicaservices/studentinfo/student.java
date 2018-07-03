@@ -11,25 +11,30 @@ import android.widget.TextView;
  */
 
 public class student extends AppCompatActivity {
+    String studentName;
+    String collegeName;
+    String addName;
+    long ph;
 
-    TextView textView1;
-    TextView textView2;
-    TextView textView3;
-    TextView textView4;
 
+    public student(String sname,String addressName,long phoneNumber,String collName){
+        studentName=sname;
+        collegeName=collName;
+        ph=phoneNumber;
+        addName=addressName;
+    }
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.studentinf);
-        Intent i = getIntent();
-        textView1 = (TextView) findViewById(R.id.text);
-        textView1.setText(" name is  :" + getIntent().getStringExtra("NAME"));
-        textView2 = (TextView) findViewById(R.id.t);
-        textView2.setText(" address is  :" + getIntent().getStringExtra("ADDRESS"));
-        textView3 = (TextView) findViewById(R.id.tex);
-        textView3.setText(" college is  :" + getIntent().getStringExtra("COLLEGE"));
-        textView4 = (TextView) findViewById(R.id.te);
-        textView4.setText(" phonnenumber :" + i.getLongExtra("PHONE", 0));
+        setContentView(R.layout.activity_main);
+
     }}
+
+
+
+
+
+
+

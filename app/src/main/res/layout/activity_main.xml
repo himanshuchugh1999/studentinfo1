@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="wrap_content"
     android:layout_width="wrap_content">
 
@@ -75,19 +76,6 @@ android:background="#5e4545"
                     android:id="@+id/c"
                     />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_marginBottom="5dp"
-                    />
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="RememberMe"
-                    android:textStyle="bold"
-                    android:padding="10dp"
-                    android:layout_marginLeft="10dp"/>
-
                 <Button
                     android:id="@+id/button"
                     android:layout_width="wrap_content"
@@ -97,7 +85,9 @@ android:background="#5e4545"
                     android:layout_marginTop="10dp"
                     android:background="#39784c"
                     android:text="Register Now"
-                    android:layout_marginRight="20dp"/>
+                    android:layout_marginRight="20dp"
+                    android:clickable="true"
+                   />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -109,15 +99,15 @@ android:background="#5e4545"
 
     </LinearLayout>
 
+
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_below="@+id/linearLayout"
-        android:layout_marginStart="14dp"
         android:layout_marginTop="60dp"
-        android:text="TextView" />
+        android:text="TextView"
+        android:background="@color/colorPrimaryDark"/>
 
     <Button
         android:id="@+id/button2"
@@ -126,9 +116,21 @@ android:background="#5e4545"
         android:layout_above="@+id/textView"
         android:layout_alignStart="@+id/textView"
         android:layout_marginBottom="40dp"
-        android:layout_marginStart="22dp"
+        android:layout_marginStart="32dp"
         android:text="add"
+        android:background="#39784c"
+        android:clickable="true"/>
 
-        android:background="#39784c"/>
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_alignStart="@+id/button2"
+        android:layout_below="@+id/linearLayout"
+        android:layout_marginTop="21dp"
+        android:textColor="#000"
+        android:text="Information Of student is shown below"
+        android:background="@color/colorAccent"
+        />
 </RelativeLayout>
 </ScrollView>
