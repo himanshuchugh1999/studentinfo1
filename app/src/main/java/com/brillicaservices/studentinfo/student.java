@@ -1,5 +1,6 @@
 package com.brillicaservices.studentinfo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -22,6 +23,7 @@ public class student extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.studentinf);
+        Intent i = getIntent();
         textView1 = (TextView) findViewById(R.id.text);
         textView1.setText(" name is  :" + getIntent().getStringExtra("NAME"));
         textView2 = (TextView) findViewById(R.id.t);
@@ -29,5 +31,5 @@ public class student extends AppCompatActivity {
         textView3 = (TextView) findViewById(R.id.tex);
         textView3.setText(" college is  :" + getIntent().getStringExtra("COLLEGE"));
         textView4 = (TextView) findViewById(R.id.te);
-        textView4.setText(" phonnenumber :" + getIntent().getStringExtra("PHONE"));
+        textView4.setText(" phonnenumber :" + i.getLongExtra("PHONE", 0));
     }}
