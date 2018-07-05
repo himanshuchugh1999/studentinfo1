@@ -25,7 +25,11 @@
             android:textColor="#58D68D  "
             android:textStyle="bold"
             />
-
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@mipmap/l"
+    android:layout_gravity="center"/>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -67,14 +71,11 @@ android:background="#5e4545"
                     android:id="@+id/p"
                     />
 
-                <EditText
+                <Spinner
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:textColor="#fff"
-                    android:hint="College Name"
-                    android:id="@+id/c"
-                    />
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/college_id_spinner"/>
 
                 <Button
                     android:id="@+id/button"
