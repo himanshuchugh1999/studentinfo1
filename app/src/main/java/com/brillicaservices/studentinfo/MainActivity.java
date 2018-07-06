@@ -91,30 +91,26 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     }
                     else if (namevalue.length()<1){
                         builder.setMessage("check your name").setTitle("name error");
-
-//                        builder.setNegativeButton("OK)
+                        builder.setPositiveButton("OK",null);
                         AlertDialog dialog = builder.create();
                         dialog.show();
 
                     }
                   else if (address.length()<1){
                         builder.setMessage("check your address").setTitle("address error");
-
-//                        builder.setNegativeButton("OK)
+                        builder.setPositiveButton("OK",null);
                         AlertDialog dialog = builder.create();
                         dialog.show();
                     }
                     else if (phoneNumberTF.length()<10){
                         builder.setMessage("check your phone number").setTitle("Phone number error");
-
-//                        builder.setNegativeButton("OK)
+                        builder.setPositiveButton("OK",null);
                         AlertDialog dialog = builder.create();
                         dialog.show();
                     }
                     else if ((collegeName.equals(collegeNames[0]))){
                         builder.setMessage("please enter your college name").setTitle(" college name error");
-
-//                        builder.setNegativeButton("OK)
+                        builder.setPositiveButton("OK",null);
                         AlertDialog dialog = builder.create();
                         dialog.show();
                     }
