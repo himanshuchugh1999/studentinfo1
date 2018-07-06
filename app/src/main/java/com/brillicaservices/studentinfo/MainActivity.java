@@ -1,8 +1,10 @@
 package com.brillicaservices.studentinfo;
 
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -11,34 +13,36 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     ArrayList<student> studentClassArrayList = new ArrayList();
     Button btn;
-    EditText nn;
-    EditText pp;
-    EditText aa;
-    EditText cc;
+    EditText namevalueTF;
+    EditText phoneNumberTF;
+    EditText addressNameTF;
+    EditText collegeNameTF;
     Button b;
     TextView displayStudentsResultTV;
     String collegeName = "";
     Spinner spinnerCollegeNames;
+    AlertDialog.Builder builder;
 
     /*
     * Creating a string of array of colleges*/
-    String collegeNames[] = {"Select college name","DIT", "Graphic Era", "HNB"};
+    String collegeNames[] = {"Select college name","DIT", "Graphic Era", "HNB","Dtu","IITD","IITR","DBIT","SGRR","BFIT","TULAS"};
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        nn = (EditText) findViewById(R.id.n);
+        namevalueTF = (EditText) findViewById(R.id.n);
         btn = (Button) findViewById(R.id.button2);
-        aa = (EditText) findViewById(R.id.a);
-        pp = (EditText) findViewById(R.id.p);
-        cc = (EditText) findViewById(R.id.c);
+        addressNameTF = (EditText) findViewById(R.id.a);
+        phoneNumberTF = (EditText) findViewById(R.id.p);
         b=(Button) findViewById(R.id.button);
+
         displayStudentsResultTV = findViewById(R.id.textView);
 
         spinnerCollegeNames = findViewById(R.id.college_id_spinner);
@@ -62,16 +66,78 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         * first object of array is only a label.*/
         spinnerCollegeNames.setPrompt(collegeNames[0]);
 
+        builder = new AlertDialog.Builder(this);
+
+
         btn.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
-                String namevalue = nn.getText().toString();
-                String address = aa.getText().toString();
-                long phone = Long.parseLong(pp.getText().toString());
-                String college = cc.getText().toString();
-                boolean add = studentClassArrayList.add(new student(namevalue, address, phone, collegeName));
+                try{
+
+                    String namevalue = namevalueTF.getText().toString();
+                    String address = addressNameTF.getText().toString();
+                    long phone = Long.parseLong(phoneNumberTF.getText().toString());
+                    /* Showing a success message once the data has been saved into arrayList*/
+                    if(namevalue.length()>1&&address.length()>1&&phoneNumberTF.length()==10&&!(collegeName.equals(collegeNames[0])))
+                    {
+                        studentClassArrayList.add(new student(namevalue, address, phone, collegeName));
+                        Toast.makeText(getApplicationContext(),
+                                "Student data saved successfully",
+                                Toast.LENGTH_LONG).show();
+                        namevalueTF.setText("");
+                        phoneNumberTF.setText("");
+                        addressNameTF.setText("");
+                        spinnerCollegeNames.setSelection(0);
+                    }
+                    else if (namevalue.length()<1){
+                        builder.setMessage("check your name").setTitle("name error");
+
+//                        builder.setNegativeButton("OK)
+                        AlertDialog dialog = builder.create();
+                        dialog.show();
+
+                    }
+                  else if (address.length()<1){
+                        builder.setMessage("check your address").setTitle("address error");
+
+//                        builder.setNegativeButton("OK)
+                        AlertDialog dialog = builder.create();
+                        dialog.show();
+                    }
+                    else if (phoneNumberTF.length()<10){
+                        builder.setMessage("check your phone number").setTitle("Phone number error");
+
+//                        builder.setNegativeButton("OK)
+                        AlertDialog dialog = builder.create();
+                        dialog.show();
+                    }
+                    else if ((collegeName.equals(collegeNames[0]))){
+                        builder.setMessage("please enter your college name").setTitle(" college name error");
+
+//                        builder.setNegativeButton("OK)
+                        AlertDialog dialog = builder.create();
+                        dialog.show();
+                    }
+                }
+                catch (NumberFormatException e) {
+                    builder.setMessage("Enter Your Phone Number Correctly").setTitle("Phone number  error");
+
+//                        builder.setNegativeButton("OK)
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+                }
+                catch (Exception e){
+                    Toast.makeText(getApplicationContext(),
+                            "check your entries again",
+                            Toast.LENGTH_LONG).show();
+                }
             }
-        });
+            });
+
+
+
+
+
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,6 +145,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 /*
                 * Using a for loop to iterate through the list of
                 * objects that are stored in the arrayList.*/
+                displayStudentsResultTV.setText("");
                 for (int i=0; i<studentClassArrayList.size(); i++) {
 
                     /*
@@ -90,11 +157,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     displayStudentsResultTV.setText(displayStudentsResultTV.getText() +
                             "Student Name is: " + studentClassArrayList.get(i).studentName+ "\n");
                     displayStudentsResultTV.setText(displayStudentsResultTV.getText() +
-                            "Student College is: " + studentClassArrayList.get(i).collegeName + "\n");
-                    displayStudentsResultTV.setText(displayStudentsResultTV.getText() +
                             "Student Phone Number is: " + studentClassArrayList.get(i).ph + "\n");
                     displayStudentsResultTV.setText(displayStudentsResultTV.getText() +
                             "Student Address is: " + studentClassArrayList.get(i).addName+ "\n");
+                    displayStudentsResultTV.setText(displayStudentsResultTV.getText() +
+                            "Student College is: " + studentClassArrayList.get(i).collegeName + "\n");
                     displayStudentsResultTV.setText(displayStudentsResultTV.getText() + "****************\n\n");
                 }
             }

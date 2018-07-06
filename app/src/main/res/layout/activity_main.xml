@@ -61,11 +61,9 @@ android:background="#5e4545"
                     android:id="@+id/a"
                     />
 
-
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="number"
                     android:textColor="#fff"
                     android:hint="phonenumber"
                     android:id="@+id/p"
@@ -108,7 +106,7 @@ android:background="#5e4545"
         android:layout_below="@+id/linearLayout"
         android:layout_marginTop="60dp"
         android:text="TextView"
-        android:background="@color/colorPrimaryDark"/>
+        android:background="#91efbd"/>
 
     <Button
         android:id="@+id/button2"
