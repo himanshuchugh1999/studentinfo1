@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/side_nav_bar"
+    android:layout_margin="20dp"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="LOGIN PAGE"
+            android:textSize="30dp"
+            android:textColor="#000"
+            android:textStyle="bold"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:layout_gravity="center"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="30dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Name -"
+                        android:textSize="17dp"
+                        android:textColor="#000"/>
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:inputType="text"
+                        android:hint="Enter your name"
+                        android:textColor="#000"
+                        android:id="@+id/nameid"/>
+                    </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Password -"
+                        android:textSize="17dp"
+                        android:textColor="#000"/>
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:textColor="#000"
+                        android:id="@+id/passid"/>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginBottom="5dp"
+                    />
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RememberMe"
+                    android:textStyle="bold"
+                    android:padding="10dp"
+                    android:layout_marginLeft="10dp"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="forgot password?"
+                    android:layout_gravity="end"
+                    android:layout_margin="5dp"
+                    android:textColor="@color/colorAccent"
+                    android:background="@null"
+                    />
+
+                <Button
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:text="sign in"
+                    android:background="#198efc"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/sign"
+                    />
+
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>
