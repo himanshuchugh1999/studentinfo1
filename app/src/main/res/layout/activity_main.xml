@@ -1,135 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="wrap_content"
-    android:layout_width="wrap_content">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 
-<RelativeLayout
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="#26113b"
-    >
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_alignParentTop="true"
-        android:id="@+id/linearLayout">
+        android:layout_height="match_parent"
+        android:background="#26113b">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="Student Signup Form"
+                android:textColor="#58D68D  "
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@mipmap/l" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:background="#fff">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#5e4545"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/n"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="name"
+                        android:inputType="text"
+                        android:textColor="#fff" />
+
+                    <EditText
+                        android:id="@+id/a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint=" address"
+                        android:inputType="textPostalAddress"
+                        android:textColor="#fff"
+
+                        />
+
+                    <EditText
+                        android:id="@+id/p"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="phonenumber"
+                        android:textColor="#fff" />
+
+                    <Spinner
+                        android:id="@+id/college_id_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp" />
+
+                    <EditText
+                        android:id="@+id/pass"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:hint="password"
+                        android:inputType="textPassword" />
+
+                    <EditText
+                        android:id="@+id/password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:hint="confirm password"
+                        android:inputType="textPassword" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/button2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_above="@+id/textView"
+                            android:layout_alignStart="@+id/textView"
+                            android:layout_marginBottom="40dp"
+                            android:layout_marginStart="32dp"
+                            android:background="#39784c"
+                            android:clickable="true"
+                            android:text="add" />
+
+
+                        <Button
+                            android:id="@+id/button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_gravity="right"
+                            android:layout_marginLeft="60dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginTop="10dp"
+                            android:background="#39784c"
+                            android:clickable="true"
+                            android:text="Register Now" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Already have an account?"
+                            android:textColor="#000" />
+
+                        <Button
+                            android:id="@+id/login"
+                            android:layout_width="37dp"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:clickable="true"
+                            android:text="login"
+                            android:textAllCaps="false"
+                            android:textColor="#FFFF" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
 
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:gravity="center"
-            android:text="Student Signup Form"
-            android:textSize="18sp"
-            android:textColor="#58D68D  "
-            android:textStyle="bold"
-            />
-<ImageView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:src="@mipmap/l"
-    android:layout_gravity="center"/>
-        <RelativeLayout
+            android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#fff"
-            android:layout_gravity="center"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            >
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-android:background="#5e4545"
-                >
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:textColor="#fff"
-                    android:hint="name"
-                    android:id="@+id/n"
-                    />
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPostalAddress"
-                    android:textColor="#fff"
-                    android:hint=" address"
-                    android:id="@+id/a"
-                    />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="#fff"
-                    android:hint="phonenumber"
-                    android:id="@+id/p"
-                    />
-
-                <Spinner
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:id="@+id/college_id_spinner"/>
-
-                <Button
-                    android:id="@+id/button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginTop="10dp"
-                    android:background="#39784c"
-                    android:text="Register Now"
-                    android:layout_marginRight="20dp"
-                    android:clickable="true"
-                   />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Already have an account?"
-                    android:layout_margin="5dp"/>
-            </LinearLayout>
-
-        </RelativeLayout>
-
-    </LinearLayout>
+            android:layout_below="@+id/linearLayout"
+            android:layout_marginTop="60dp"
+            android:background="#91efbd"
+            android:text="TextView" />
 
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/linearLayout"
-        android:layout_marginTop="60dp"
-        android:text="TextView"
-        android:background="#91efbd"/>
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/textView"
-        android:layout_alignStart="@+id/textView"
-        android:layout_marginBottom="40dp"
-        android:layout_marginStart="32dp"
-        android:text="add"
-        android:background="#39784c"
-        android:clickable="true"/>
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_alignStart="@+id/button2"
-        android:layout_below="@+id/linearLayout"
-        android:layout_marginTop="21dp"
-        android:textColor="#000"
-        android:text="Information Of student is shown below"
-        android:background="@color/colorAccent"
-        />
-</RelativeLayout>
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_below="@+id/linearLayout"
+            android:layout_marginTop="21dp"
+            android:background="@color/colorAccent"
+            android:text="Information Of student is shown below"
+            android:textColor="#000" />
+    </RelativeLayout>
 </ScrollView>

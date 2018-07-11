@@ -15,24 +15,77 @@ public class student extends AppCompatActivity {
     String collegeName;
     String addName;
     long ph;
+    int id;
+    String passwords;
 
-
-    public student(String sname,String addressName,long phoneNumber,String collName){
-        studentName=sname;
-        collegeName=collName;
-        ph=phoneNumber;
-        addName=addressName;
+    public student(int id, String studentName, String collegeName, long ph, String addName, String passwords) {
+        this.id = id;
+        this.studentName = studentName;
+        this.collegeName = collegeName;
+        this.addName = addName;
+        this.ph = ph;
+        this.passwords = passwords;
     }
 
+    public student(String studentName, String collegeName, String addName, long ph, String passwords) {
+        this.id = id;
+        this.studentName = studentName;
+        this.collegeName = collegeName;
+        this.addName = addName;
+        this.ph = ph;
+        this.passwords = passwords;
+    }
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public student() {
 
-    }}
+    }
 
+    public long getPhoneNumber() {
+        return ph;
+    }
 
+    public String getAddress() {
+        return addName;
+    }
+
+    public String getCollegeName() {
+        return collegeName;
+    }
+
+    public String getName() {
+        return studentName;
+    }
+
+    public int getId() {
+        return id;
+    }
+    public String getPasswords(){
+        return passwords;
+    }
+
+    public void setAddress(String address) {
+        this.addName = address;
+    }
+
+    public void setCollegeName(String collegeName) {
+        this.collegeName = collegeName;
+    }
+
+    public void setName(String name) {
+        this.studentName = name;
+    }
+
+    public void setPhoneNumber(long phoneNumber) {
+        this.ph = phoneNumber;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    public void setPasswords(String passwords) {
+        this.passwords=passwords;
+    }
+}
 
 
 
